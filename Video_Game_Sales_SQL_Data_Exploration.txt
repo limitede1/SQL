@@ -1,0 +1,94 @@
+
+
+-- What is the oldest and most recent relase date?
+
+SELECT
+ 
+  MIN(Year) AS Oldest_Game_Release,
+  MAX(Year) AS Most_Recent_Release_Date
+FROM `VG_Sales.Video_Games_Sales`
+WHERE Year <> "N/A" 
+
+-- Oldest release date is 1980 
+-- Most Recent release date is 2020
+
+
+SELECT 
+  Name,
+  Platform,
+  Rank,
+  Year
+FROM `VG_Sales.Video_Games_Sales`
+ORDER BY Rank 
+LIMIT 10
+
+-- Wii Sports is the highest ranking video game
+-- Nintendo Takes up all of top 10 video games by Rank!
+
+-- What are the top 5 highest grossing games?
+
+SELECT
+  Name,
+  Platform,
+  Global_Sales,
+  Year
+FROM `VG_Sales.Video_Games_Sales`
+ORDER BY Global_Sales DESC
+LIMIT 5
+
+-- What is the average video game sales in North America?
+
+SELECT
+  AVG(NA_Sales) AS NA_Average_Sales
+FROM `VG_Sales.Video_Games_Sales`
+
+-- Average for NA Sales is 0.264
+
+
+-- What is the most common genre?
+
+SELECT
+  Genre,
+ COUNT (Genre) AS Count_by_Genre
+FROM `VG_Sales.Video_Games_Sales`
+GROUP BY Genre
+ORDER BY Count_by_Genre DESC
+
+-- Action is the most common genre.
+
+-- Top 5 global grossing Pokemon games
+
+SELECT 
+  Name,
+  Platform,
+  Year,
+  Global_Sales
+FROM `VG_Sales.Video_Games_Sales`
+WHERE Name LIKE 'Pokemon%'
+ORDER BY Global_Sales DESC
+LIMIT 5
+
+-- Highest grossing game in North America from 2000-2020
+
+SELECT 
+  Name,
+  Platform,
+  NA_Sales,
+  Year
+ FROM `VG_Sales.Video_Games_Sales`
+ WHERE Year BETWEEN "2000" and "2020"
+ ORDER BY  NA_Sales DESC
+ LIMIT 5
+
+ -- Wii Sports
+
+-- What is the most common platform?
+
+SELECT 
+  Platform,
+  COUNT(*) AS number_of_platform
+FROM `VG_Sales.Video_Games_Sales`
+GROUP BY Platform
+ORDER BY number_of_platform DESC
+
+-- Nintendo DS is the most common platform
