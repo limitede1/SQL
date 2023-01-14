@@ -1,4 +1,4 @@
-
+-- Link to dataset: https://www.kaggle.com/datasets/gregorut/videogamesales
 
 -- What is the oldest and most recent relase date?
 
