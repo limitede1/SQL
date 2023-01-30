@@ -611,3 +611,5 @@ WHERE city = 'Las Vegas'
 GROUP BY city
 	,category
 ORDER BY (b.review_count) DESC LIMIT 1
+
+-- Conclusion This assignment was fun! Enjoyed the course SQL for Data Science by Coursera
